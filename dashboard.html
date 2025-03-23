@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <section class="main-section">
+    <nav>
+      <h1 data-aos="zoom-in" data-aos-duration="1000">
+        <span class="WEATHER">WEATHER </span>STATION
+      </h1>
+      <ul class="nav-links">
+        <li><a class="active" href="Weather.html">HOME</a></li>
+        <li><a href="dashboard.html">DASHBOARD</a></li>
+        <div class="dropdown">
+            <button class="dropbtn">☰</button>
+          <div class="dropdown-content">
+              <a href="index.html">Login</a>
+              <a href="#" onclick="logout()">logout</a>
+          </div>
+      </div>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class='bx bx-menu'></i> <!-- ไอคอนเมนู -->
+      </div>
+    </nav>
+    
+
+      <div class="container">
+        <iframe src="https://edde-184-22-16-127.ngrok-free.app/ui/?fbclid=IwY2xjawJNC3NleHRuA2FlbQIxMAABHdeStWhkIjFiM0izCSuZPSViy2qPCd8F4a-wRvdW4XukpH99glkGSMTHbQ_aem_UG2V9ysn3G6uDiCjcBjMVA#!/0?socketid=wuKpamckBzN1O9cjAAAj" 
+        frameborder="0" 
+        width="100%" 
+        height="600px" 
+        sandbox="allow-same-origin allow-scripts">
+</iframe>
+
+      </div>
+  </section>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    // ✅ ตรวจสอบการล็อกอิน
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        alert("กรุณาเข้าสู่ระบบก่อน!");
+        window.location.href = "index.html"; // กลับไปหน้า login
+    }
+});
+function logout() {
+    // ✅ ลบข้อมูลการล็อกอิน
+    localStorage.removeItem("isLoggedIn");
+
+    // ✅ กลับไปที่หน้า login
+    window.location.href = "index.html";
+}
+
+
+  </script>
+</body>
+</html>
