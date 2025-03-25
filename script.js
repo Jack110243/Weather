@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("isLoggedIn", "true");
 
         // ✅ ไปหน้า dashboard
-        window.location.href = "https://6ddb-49-228-97-122.ngrok-free.app/ui/#!/0?socketid=k1-8dnpTOAJ4qD_EAAAD";
+        window.location.href = "weather.html";
         return false;
     } else {
         alert("Username หรือ Password ไม่ถูกต้อง!");
