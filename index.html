@@ -18,7 +18,7 @@
       </h1>
       <ul class="nav-links">
         <li><a class="active" href="Weather.html">HOME</a></li>
-        <li><a href="dashboard.html">DASHBOARD</a></li>
+        <li><a href="https://6ddb-49-228-97-122.ngrok-free.app/ui/#!/0?socketid=k1-8dnpTOAJ4qD_EAAAD">DASHBOARD</a></li>
         <div class="dropdown">
           <button class="dropbtn">☰</button>
         <div class="dropdown-content">
@@ -48,7 +48,6 @@
         <p class="register-text">Don't have an account? <a href="#">Sign up</a></p>
       </form>
   </section>
-
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js">  </script>
   <script>  function logout() {
@@ -57,7 +56,24 @@
 
     // ✅ กลับไปที่หน้า login
     window.location.href = "index.html";
+
+    
 }</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dashboardLink = document.querySelector(".nav-links a[href='https://6ddb-49-228-97-122.ngrok-free.app/ui/#!/0?socketid=k1-8dnpTOAJ4qD_EAAAD']");
+
+    if (dashboardLink) {
+        dashboardLink.addEventListener("click", function (event) {
+            if (localStorage.getItem("isLoggedIn") !== "true") {
+                event.preventDefault(); // ป้องกันการเปลี่ยนหน้า
+                alert("กรุณาเข้าสู่ระบบก่อนเข้าถึงแดชบอร์ด!");
+                window.location.href = "index.html"; // พาไปล็อกอินก่อน
+            }
+        });
+    }
+});
+</script>
   
 
 </body>
